@@ -1,12 +1,17 @@
-target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
-.mvn/timing.properties
+LegoCarport/target/
+LegoCarport/pom.xml.tag
+LegoCarport/pom.xml.releaseBackup
+LegoCarport/pom.xml.versionsBackup
+LegoCarport/pom.xml.next
+LegoCarport/release.properties
+LegoCarport/dependency-reduced-pom.xml
+LegoCarport/buildNumber.properties
+LegoCarport/.mvn/timing.properties
 
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
 !/.mvn/wrapper/maven-wrapper.jar
+
+
+
+
+
