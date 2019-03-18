@@ -10,10 +10,11 @@ CREATE TABLE `lego`.`users` (
   `id_user` INT NOT NULL AUTO_INCREMENT,
   `email` VARCHAR(45) NOT NULL,
   `password` VARCHAR(45) NOT NULL,
-  `role` VARCHAR(45) NOT NULL DEFAULT 'customer',
+  `role` ENUM('customer', 'employee') NOT NULL DEFAULT 'customer',
   PRIMARY KEY (`id_user`),
   UNIQUE INDEX `id_user_UNIQUE` (`id_user` ASC) VISIBLE,
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE);
+
 
 
 CREATE TABLE `lego`.`orders` (
@@ -36,7 +37,6 @@ CREATE TABLE `lego`.`order_details` (
   `length` INT NOT NULL,
   `width` INT NOT NULL,
   `height` INT NOT NULL,
-  `order_detailscol` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id_order_details`),
   UNIQUE INDEX `id_order_details_UNIQUE` (`id_order_details` ASC) VISIBLE,
   INDEX `id_order_idx` (`id_order` ASC) VISIBLE,
