@@ -1,7 +1,7 @@
-package DBAccess;
+package data;
 
-import FunctionLayer.LoginSampleException;
-import FunctionLayer.User;
+import logic.LoginSampleException;
+import logic.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

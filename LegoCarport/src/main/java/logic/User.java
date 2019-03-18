@@ -1,4 +1,4 @@
-package FunctionLayer;
+package logic;
 
 /**
  * The purpose of User is to...
