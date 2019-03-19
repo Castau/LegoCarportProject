@@ -1,7 +1,7 @@
 <%-- 
-    Document   : employeepage.jsp
-    Created on : Aug 24, 2017, 6:31:57 AM
-    Author     : kasper
+    Document   : Employee
+    Created on : 19-03-2019, 15:10:47
+    Author     : Camilla
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -15,5 +15,7 @@
         
         <h1>Hello <%=request.getParameter( "email")%> </h1>
         You are now logged in as a EMPLOYEE of our wonderful site.
+        
+        I AM THE JSP FOLDER GUY MAN! PENIS
     </body>
 </html>

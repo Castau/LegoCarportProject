@@ -17,31 +17,31 @@
         <table>
             <tr><td>Login</td>
                 <td>
-                    <form name="login" action="FrontController" method="POST">
+                    <form name="login" action="Home" method="POST">
                         <input type="hidden" name="command" value="login">
                         Email:<br>
-                        <input type="text" name="email" value="someone@nowhere.com">
+                        <input type="text" name="email" value="" placeholder="...">
                         <br>
                         Password:<br>
-                        <input type="password" name="password" value="sesam">
+                        <input type="password" name="password" value="" placeholder="...">
                         <br>
-                        <input type="submit" value="Submit">
+                        <input type="submit" value="Login">
                     </form>
                 </td>
                 <td>Or Register</td>
                 <td>
-                    <form name="register" action="FrontController" method="POST">
+                    <form name="register" action="Home" method="POST">
                         <input type="hidden" name="command" value="register">
                         Email:<br>
-                        <input type="text" name="email" value="someone@nowhere.com">
+                        <input type="text" name="email" value="" placeholder="...">
                         <br>
                         Password:<br>
-                        <input type="password" name="password1" value="sesam">
+                        <input type="password" name="password1" value="" placeholder="...">
                         <br>
                         Retype Password:<br>
-                        <input type="password" name="password2" value="sesam">
+                        <input type="password" name="password2" value="" placeholder="...">
                         <br>
-                        <input type="submit" value="Submit">
+                        <input type="submit" value="Register">
                     </form>
                 </td>
             </tr>

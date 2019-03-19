@@ -22,7 +22,15 @@ public class Login extends Command {
         HttpSession session = request.getSession();
         session.setAttribute( "user", user );
         session.setAttribute( "role", user.getRole() );
-        return user.getRole() + "page";
+        
+        
+        // NEED FIX WHEN USER IS UPDATED TO HAVE ROLE ENUM
+        if(user.getRole().equals("customer")){
+            return "Customer";
+        }else{
+            return "Employee";
+        }
+        //return user.getRole() + "page";
     }
 
 }
