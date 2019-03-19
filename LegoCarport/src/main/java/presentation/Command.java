@@ -1,11 +1,16 @@
 package presentation;
 
+import presentation.commands.UnknownCommand;
+import presentation.commands.DesignHouseCommand;
+import presentation.commands.LoginCommand;
+import presentation.commands.RegisterCommand;
+import presentation.commands.CreateHouseCommand;
 import logic.LoginSampleException;
 import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-abstract class Command {
+public abstract class Command {
 
     private static HashMap<String, Command> commands;
 
@@ -25,7 +30,7 @@ abstract class Command {
         return commands.getOrDefault(commandName, new UnknownCommand() );
     }
 
-    abstract String execute( HttpServletRequest request, HttpServletResponse response ) 
+    public abstract String execute( HttpServletRequest request, HttpServletResponse response ) 
             throws LoginSampleException;
 
 }

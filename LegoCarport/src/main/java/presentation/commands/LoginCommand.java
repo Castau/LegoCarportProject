@@ -1,11 +1,12 @@
-package presentation;
+package presentation.commands;
 
 import logic.LogicFacade;
 import logic.LoginSampleException;
-import data.User;
+import data.models.User;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import presentation.Command;
 
 /**
  The purpose of Login is to...
@@ -15,7 +16,7 @@ import javax.servlet.http.HttpSession;
 public class LoginCommand extends Command {
 
     @Override
-    String execute( HttpServletRequest request, HttpServletResponse response ) throws LoginSampleException {
+    public String execute( HttpServletRequest request, HttpServletResponse response ) throws LoginSampleException {
         String email = request.getParameter( "email" );
         String password = request.getParameter( "password" );
         User user = LogicFacade.login( email, password );

@@ -1,7 +1,7 @@
 package logic;
 
-import data.User;
-import data.UserMapper;
+import data.models.User;
+import data.mappers.UserMapper;
 
 /**
  * The purpose of LogicFacade is to...

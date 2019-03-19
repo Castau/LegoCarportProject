@@ -1,4 +1,4 @@
-package data;
+package data.models;
 
 /**
  * The purpose of User is to...
