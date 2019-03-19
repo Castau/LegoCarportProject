@@ -1,4 +1,4 @@
-package logic;
+package data;
 
 /**
  * The purpose of User is to...

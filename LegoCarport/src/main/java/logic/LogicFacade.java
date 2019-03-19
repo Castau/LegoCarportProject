@@ -1,5 +1,6 @@
 package logic;
 
+import data.User;
 import data.UserMapper;
 
 /**

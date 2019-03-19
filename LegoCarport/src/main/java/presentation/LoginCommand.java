@@ -2,7 +2,7 @@ package presentation;
 
 import logic.LogicFacade;
 import logic.LoginSampleException;
-import logic.User;
+import data.User;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;

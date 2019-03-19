@@ -1,7 +1,6 @@
 package data;
 
 import logic.LoginSampleException;
-import logic.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
