@@ -15,6 +15,6 @@
         <h1>Hello <%=request.getParameter( "email" )%> </h1>
         You are now logged in as a CUSTOMER of our wonderful site.
         
-        
+        <a href="Home?command=design"> Design House</a>
     </body>
 </html>
