@@ -15,6 +15,6 @@
         <h1>Hello <%=request.getParameter( "email" )%> </h1>
         You are now logged in as a CUSTOMER of our wonderful site.
         
-        I AM THE JSP FOLDER GUY MAN! PENIS
+        
     </body>
 </html>
