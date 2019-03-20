@@ -10,6 +10,8 @@ import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import logic.LogicFacade;
+import presentation.commands.CustomerCommand;
+import presentation.commands.EmployeeCommand;
 
 public abstract class Command {
 
@@ -21,8 +23,8 @@ public abstract class Command {
         commands.put( "register", new RegisterCommand() );
         commands.put( "design", new DesignHouseCommand() );
         commands.put( "create", new CreateHouseCommand() );
-        commands.put( "customer", new CreateHouseCommand() );
-        commands.put( "employee", new CreateHouseCommand() );
+        commands.put( "customer", new CustomerCommand() );
+        commands.put( "employee", new EmployeeCommand() );
     }
 
     static Command from( HttpServletRequest request ) {

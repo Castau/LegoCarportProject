@@ -11,8 +11,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import logic.LEGO_CustomException;
 import logic.models.HouseOrder;
 
@@ -72,8 +70,6 @@ public class OrderMapper {
                 order.setStatus(rs.getString("order_status"));
                 allOrders.add(order);
             }
-            
-            // setStatus
 
         } catch (SQLException | ClassNotFoundException ex) {
             throw new LEGO_CustomException(ex.getMessage());
