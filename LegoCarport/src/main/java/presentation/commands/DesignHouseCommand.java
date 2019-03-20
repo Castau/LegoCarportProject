@@ -8,7 +8,7 @@ package presentation.commands;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import logic.LogicFacade;
-import logic.LoginSampleException;
+import logic.LEGOAllPurposeException;
 import presentation.Command;
 
 /**
@@ -18,7 +18,7 @@ import presentation.Command;
 public class DesignHouseCommand extends Command {
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response, LogicFacade logic) throws LoginSampleException {
+    public String execute(HttpServletRequest request, HttpServletResponse response, LogicFacade logic) throws LEGOAllPurposeException {
         return "DesignHouse";
 
     }

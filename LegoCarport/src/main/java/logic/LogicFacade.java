@@ -14,10 +14,12 @@ import logic.models.User;
  */
 public interface LogicFacade {
 
-    public User login(String email, String password) throws LoginSampleException;
+    public User login(String email, String password) throws LEGOAllPurposeException;
 
-    public User createUser(String email, String password) throws LoginSampleException;
+    public User createUser(String email, String password) throws LEGOAllPurposeException;
     
-    public void createHouse(HouseOrder order) throws LoginSampleException;
+    public void saveHouse (HouseOrder order) throws LEGOAllPurposeException;
+    
+    public void createHouse(HouseOrder order) throws LEGOAllPurposeException;
     
 }

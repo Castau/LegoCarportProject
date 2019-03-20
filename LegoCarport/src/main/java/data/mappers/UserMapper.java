@@ -2,7 +2,7 @@ package data.mappers;
 
 import data.Connector;
 import logic.models.User;
-import logic.LoginSampleException;
+import logic.LEGOAllPurposeException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,25 +16,35 @@ import java.sql.Statement;
  */
 public class UserMapper {
 
-    public static void createUser( User user ) throws LoginSampleException {
+    private static UserMapper userMapper;
+    
+    private UserMapper() {
+        
+    }
+    
+    public static UserMapper getInstance(){
+        if(userMapper == null){
+            userMapper = new UserMapper();
+        }
+        return userMapper;
+    }
+
+    public void createUser( User user ) throws LEGOAllPurposeException {
         try {
             Connection con = Connector.connection();
             String SQL = "INSERT INTO lego.users (email, password, role) VALUES (?, ?, ?)";
-            PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
+            PreparedStatement ps = con.prepareStatement(SQL);
             ps.setString( 1, user.getEmail() );
             ps.setString( 2, user.getPassword() );
             ps.setString( 3, user.getRole() );
             ps.executeUpdate();
-            ResultSet ids = ps.getGeneratedKeys();
-            ids.next();
-            int id = ids.getInt( 1 );
-            user.setId( id );
+
         } catch ( SQLException | ClassNotFoundException ex ) {
-            throw new LoginSampleException( ex.getMessage() );
+            throw new LEGOAllPurposeException( ex.getMessage() );
         }
     }
 
-    public static User login( String email, String password ) throws LoginSampleException {
+    public User login( String email, String password ) throws LEGOAllPurposeException {
         try {
             Connection con = Connector.connection();
             String SQL = "SELECT id_user, role FROM lego.users "
@@ -50,10 +60,10 @@ public class UserMapper {
                 user.setId( id );
                 return user;
             } else {
-                throw new LoginSampleException( "Could not validate user" );
+                throw new LEGOAllPurposeException( "Could not validate user" );
             }
         } catch ( ClassNotFoundException | SQLException ex ) {
-            throw new LoginSampleException(ex.getMessage());
+            throw new LEGOAllPurposeException(ex.getMessage());
         }
     }
 

@@ -1,7 +1,7 @@
 package presentation.commands;
 
 
-import logic.LoginSampleException;
+import logic.LEGOAllPurposeException;
 import logic.models.User;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,7 +17,7 @@ import presentation.Command;
 public class LoginCommand extends Command {
 
     @Override
-    public String execute( HttpServletRequest request, HttpServletResponse response,LogicFacade logic ) throws LoginSampleException {
+    public String execute( HttpServletRequest request, HttpServletResponse response,LogicFacade logic ) throws LEGOAllPurposeException {
         String email = request.getParameter( "email" );
         String password = request.getParameter( "password" );
         User user = logic.login( email, password );

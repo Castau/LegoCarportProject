@@ -5,7 +5,7 @@ import presentation.commands.DesignHouseCommand;
 import presentation.commands.LoginCommand;
 import presentation.commands.RegisterCommand;
 import presentation.commands.CreateHouseCommand;
-import logic.LoginSampleException;
+import logic.LEGOAllPurposeException;
 import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -32,6 +32,6 @@ public abstract class Command {
     }
 
     public abstract String execute( HttpServletRequest request, HttpServletResponse response, LogicFacade logic) 
-            throws LoginSampleException;
+            throws LEGOAllPurposeException;
 
 }

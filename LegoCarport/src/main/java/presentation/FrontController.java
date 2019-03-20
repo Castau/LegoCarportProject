@@ -5,7 +5,7 @@
  */
 package presentation;
 
-import logic.LoginSampleException;
+import logic.LEGOAllPurposeException;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -43,17 +43,17 @@ public class FrontController extends HttpServlet {
             String view = command.execute(request, response, logic);
             request.getRequestDispatcher("/jsp/" + view + ".jsp").forward(request, response);
 
-        } catch (LoginSampleException ex) {
+        } catch (LEGOAllPurposeException ex) {
             request.setAttribute("error", ex.getMessage());
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
     }
 
-    private void validateSession(HttpServletRequest request) throws LoginSampleException {
+    private void validateSession(HttpServletRequest request) throws LEGOAllPurposeException {
         HttpSession session = request.getSession();
         if (!(request.getParameter("command").equals("login") || request.getParameter("command").equals("register"))) {
             if (session == null || session.getAttribute("user") == null) {
-                throw new LoginSampleException("Session Invalid");
+                throw new LEGOAllPurposeException("Session Invalid");
             }
         }
     }
