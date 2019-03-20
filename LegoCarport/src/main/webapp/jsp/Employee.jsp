@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Employee home page</title>
+        <title>Employee Home Page</title>
     </head>
     <body>
         

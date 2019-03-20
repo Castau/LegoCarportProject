@@ -9,6 +9,7 @@ import logic.LoginSampleException;
 import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import logic.LogicFacade;
 
 public abstract class Command {
 
@@ -30,7 +31,7 @@ public abstract class Command {
         return commands.getOrDefault(commandName, new UnknownCommand() );
     }
 
-    public abstract String execute( HttpServletRequest request, HttpServletResponse response ) 
+    public abstract String execute( HttpServletRequest request, HttpServletResponse response, LogicFacade logic) 
             throws LoginSampleException;
 
 }

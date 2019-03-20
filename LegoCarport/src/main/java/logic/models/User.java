@@ -1,4 +1,4 @@
-package data.models;
+package logic.models;
 
 /**
  * The purpose of User is to...

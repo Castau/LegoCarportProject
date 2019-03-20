@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import logic.LogicFacade;
+import logic.Logic_Impl;
 
 /**
  *
@@ -20,6 +22,8 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet(name = "FrontController", urlPatterns = {"/Home"})
 public class FrontController extends HttpServlet {
+
+    private final LogicFacade logic = new Logic_Impl();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,7 +40,7 @@ public class FrontController extends HttpServlet {
         try {
             validateSession(request);
             Command command = Command.from(request);
-            String view = command.execute(request, response);
+            String view = command.execute(request, response, logic);
             request.getRequestDispatcher("/jsp/" + view + ".jsp").forward(request, response);
 
         } catch (LoginSampleException ex) {
