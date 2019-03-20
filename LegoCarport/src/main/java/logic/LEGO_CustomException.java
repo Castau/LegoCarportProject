@@ -4,9 +4,9 @@ package logic;
  * The purpose of LoginSampleException is to...
  * @author Camilla
  */
-public class LEGOAllPurposeException extends Exception {
+public class LEGO_CustomException extends Exception {
 
-    public LEGOAllPurposeException(String msg) {
+    public LEGO_CustomException(String msg) {
         super(msg);
     }
     

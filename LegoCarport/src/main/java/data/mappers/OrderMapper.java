@@ -11,7 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import logic.LEGOAllPurposeException;
+import logic.LEGO_CustomException;
 import logic.models.HouseOrder;
 import logic.models.User;
 
@@ -36,7 +36,7 @@ public class OrderMapper {
     }
     
     
-    public void createUser(HouseOrder order) throws LEGOAllPurposeException {
+    public void createUser(HouseOrder order) throws LEGO_CustomException {
         try {
             Connection con = Connector.connection();
             String SQL = "INSERT INTO lego.orders (id_user, length, width, height, door, window) VALUES (?, ?, ?, ?, ?, ?)";
@@ -50,7 +50,7 @@ public class OrderMapper {
             ps.executeUpdate();
             
         } catch ( SQLException | ClassNotFoundException ex ) {
-            throw new LEGOAllPurposeException( ex.getMessage() );
+            throw new LEGO_CustomException( ex.getMessage() );
         }
     }
     

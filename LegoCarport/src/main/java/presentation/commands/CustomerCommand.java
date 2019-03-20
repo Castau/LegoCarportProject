@@ -7,7 +7,7 @@ package presentation.commands;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import logic.LEGOAllPurposeException;
+import logic.LEGO_CustomException;
 import logic.LogicFacade;
 import presentation.Command;
 
@@ -19,7 +19,7 @@ import presentation.Command;
 public class CustomerCommand extends Command{
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response, LogicFacade logic) throws LEGOAllPurposeException {
+    public String execute(HttpServletRequest request, HttpServletResponse response, LogicFacade logic) throws LEGO_CustomException {
         return "Customer";
     }
 }

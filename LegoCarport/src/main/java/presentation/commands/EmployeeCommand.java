@@ -7,7 +7,7 @@ package presentation.commands;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import logic.LEGOAllPurposeException;
+import logic.LEGO_CustomException;
 import logic.LogicFacade;
 import logic.models.User;
 import presentation.Command;
@@ -19,7 +19,7 @@ import presentation.Command;
 public class EmployeeCommand extends Command{
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response, LogicFacade logic) throws LEGOAllPurposeException {
+    public String execute(HttpServletRequest request, HttpServletResponse response, LogicFacade logic) throws LEGO_CustomException {
         User user = (User) request.getSession().getAttribute("user");
         if (User.Role.employee != user.getRole()){
             return "Customer";

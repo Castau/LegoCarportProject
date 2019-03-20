@@ -17,19 +17,19 @@ import logic.models.User.Role;
 public class Logic_Impl implements LogicFacade{
 
     @Override
-    public User login(String email, String password) throws LEGOAllPurposeException {
+    public User login(String email, String password) throws LEGO_CustomException {
         return UserMapper.getInstance().login( email, password );
     }
 
     @Override
-    public User createUser(String email, String password) throws LEGOAllPurposeException {
+    public User createUser(String email, String password) throws LEGO_CustomException {
         User user = new User(email, password, Role.customer);
         UserMapper.getInstance().createUser( user );
         return user;
     }
 
     @Override
-    public void createHouse(HouseOrder order) throws LEGOAllPurposeException {
+    public void createHouse(HouseOrder order) throws LEGO_CustomException {
         // call algorithm 
         // create stykliste
         // map stykliste to db
@@ -42,7 +42,7 @@ public class Logic_Impl implements LogicFacade{
     }
 
     @Override
-    public void saveHouse(HouseOrder order) throws LEGOAllPurposeException {
+    public void saveHouse(HouseOrder order) throws LEGO_CustomException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
