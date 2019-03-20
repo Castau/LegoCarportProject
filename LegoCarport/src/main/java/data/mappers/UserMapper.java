@@ -7,7 +7,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 /**
  The purpose of UserMapper is to...
@@ -36,7 +35,7 @@ public class UserMapper {
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setString( 1, user.getEmail() );
             ps.setString( 2, user.getPassword() );
-            ps.setString( 3, user.getRole() );
+            ps.setString( 3, user.getRole().toString() );
             ps.executeUpdate();
 
         } catch ( SQLException | ClassNotFoundException ex ) {
@@ -54,7 +53,7 @@ public class UserMapper {
             ps.setString( 2, password );
             ResultSet rs = ps.executeQuery();
             if ( rs.next() ) {
-                String role = rs.getString( "role" );
+                User.Role role = User.Role.valueOf(rs.getString( "role" ));
                 int id = rs.getInt( "id_user" );
                 User user = new User( email, password, role );
                 user.setId( id );

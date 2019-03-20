@@ -1,27 +1,28 @@
 package logic.models;
 
 /**
- * The purpose of User is to...
- * @author kasper
+ * 
+ *
+ * @author Camilla
  */
 public class User {
 
-    public User( String email, String password, String role ) {
+    private int id;
+    private String email;
+    private String password; // Should be hashed and secured
+    private Role role;
+
+    public User(String email, String password, Role role) {
         this.email = email;
         this.password = password;
         this.role = role;
     }
 
-    private int id; // just used to demo retrieval of autogen keys in UserMapper
-    private String email;
-    private String password; // Should be hashed and secured
-    private String role;
-
     public String getEmail() {
         return email;
     }
 
-    public void setEmail( String email ) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
@@ -29,15 +30,15 @@ public class User {
         return password;
     }
 
-    public void setPassword( String password ) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
-    public String getRole() {
+    public Role getRole() {
         return role;
     }
 
-    public void setRole( String role ) {
+    public void setRole(Role role) {
         this.role = role;
     }
 
@@ -45,8 +46,11 @@ public class User {
         return id;
     }
 
-    public void setId( int id ) {
+    public void setId(int id) {
         this.id = id;
     }
 
+    public enum Role {
+        employee, customer;
+    }
 }

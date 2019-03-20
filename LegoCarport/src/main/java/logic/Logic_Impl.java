@@ -8,6 +8,7 @@ package logic;
 import data.mappers.UserMapper;
 import logic.models.HouseOrder;
 import logic.models.User;
+import logic.models.User.Role;
 
 /**
  *
@@ -22,7 +23,7 @@ public class Logic_Impl implements LogicFacade{
 
     @Override
     public User createUser(String email, String password) throws LEGOAllPurposeException {
-        User user = new User(email, password, "customer");
+        User user = new User(email, password, Role.customer);
         UserMapper.getInstance().createUser( user );
         return user;
     }
