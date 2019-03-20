@@ -21,5 +21,7 @@ public interface LogicFacade {
     public void saveHouse (HouseOrder order) throws LEGO_CustomException;
     
     public void createHouse(HouseOrder order) throws LEGO_CustomException;
+
+    public void getAllOrders() throws LEGO_CustomException;
     
 }

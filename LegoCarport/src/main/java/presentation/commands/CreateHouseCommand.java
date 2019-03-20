@@ -23,13 +23,15 @@ public class CreateHouseCommand extends Command {
     public String execute(HttpServletRequest request, HttpServletResponse response, LogicFacade logic) throws LEGO_CustomException {
         response.setContentType("text/html;charset=UTF-8");
 
+        User user = (User) request.getSession().getAttribute("user");
+        
         HouseOrder order = new HouseOrder();
         order.setHeight(Integer.parseInt(request.getParameter("height")));
         order.setLength(Integer.parseInt(request.getParameter("length")));
         order.setWidth(Integer.parseInt(request.getParameter("width")));
         order.setDoor(request.getParameter("door") != null);
         order.setWindow(request.getParameter("window") != null);
-        order.setUser((User) request.getSession().getAttribute("user"));
+        order.setUserID(user.getId());
         
         logic.saveHouse(order);
 

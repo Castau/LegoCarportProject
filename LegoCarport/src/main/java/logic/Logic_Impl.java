@@ -5,6 +5,7 @@
  */
 package logic;
 
+import data.mappers.OrderMapper;
 import data.mappers.UserMapper;
 import logic.models.HouseOrder;
 import logic.models.User;
@@ -43,7 +44,12 @@ public class Logic_Impl implements LogicFacade{
 
     @Override
     public void saveHouse(HouseOrder order) throws LEGO_CustomException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        OrderMapper.getInstance().createOrder(order);
+    }
+
+    @Override
+    public void getAllOrders() throws LEGO_CustomException{
+        OrderMapper.getInstance().getAllOrders();
     }
     
 }

@@ -15,7 +15,9 @@ public class HouseOrder {
     private int height;
     private boolean door;
     private boolean window;
-    private User user;
+    private int userID;
+    private int orderID;
+    private String status;
 
     public HouseOrder() {
     }
@@ -59,13 +61,31 @@ public class HouseOrder {
     public void setWindow(boolean window) {
         this.window = window;
     }
-    
-        public User getUser() {
-        return user;
+
+    public int getUserID() {
+        return userID;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserID(int userID) {
+        this.userID = userID;
     }
+
+    public int getOrderID() {
+        return orderID;
+    }
+
+    public void setOrderID(int orderID) {
+        this.orderID = orderID;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    
+    
     
 }

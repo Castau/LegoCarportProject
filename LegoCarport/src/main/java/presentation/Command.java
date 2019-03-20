@@ -21,6 +21,8 @@ public abstract class Command {
         commands.put( "register", new RegisterCommand() );
         commands.put( "design", new DesignHouseCommand() );
         commands.put( "create", new CreateHouseCommand() );
+        commands.put( "customer", new CreateHouseCommand() );
+        commands.put( "employee", new CreateHouseCommand() );
     }
 
     static Command from( HttpServletRequest request ) {

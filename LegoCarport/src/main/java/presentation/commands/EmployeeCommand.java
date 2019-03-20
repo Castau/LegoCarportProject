@@ -24,6 +24,7 @@ public class EmployeeCommand extends Command{
         if (User.Role.employee != user.getRole()){
             return "Customer";
         }
+        logic.getAllOrders();
         return "Employee";
     }
 }
