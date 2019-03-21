@@ -53,6 +53,9 @@
                 <th>
                     See Parts List
                 </th>
+                <th>
+                    Seet Order As SHIPPED
+                </th>
             </tr>
             <% for (int i = 0; i < orders.size(); i++) {%>
             <tr>
@@ -81,7 +84,15 @@
                     <%= orders.get(i).isWindow()%>
                 </td>
                 <td>
-                    <a href="Home?command=employee"> Not working yet</a>
+                    <a href="Home?command=parts&orderID=<%= orders.get(i).getOrderID()%>"> See Parts List </a>
+                </td>
+                <td>
+                    <form name="shipbutton" action="Home" method="POST">
+                        <input type="hidden" name="command" value="ship">
+                        <button name="ship" type="submit" value="<%= orders.get(i).getOrderID()%>">
+                            Ship Order
+                        </button>
+                    </form>
                 </td>
             </tr>
             <% }%>

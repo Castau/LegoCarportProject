@@ -22,7 +22,7 @@
     <body>
         <h1>Hello <%= user.getEmail()%> </h1>
         You are now logged in as a CUSTOMER of our wonderful site.
-        
+
         <table>
             <tr>
                 <th>
@@ -80,13 +80,11 @@
                     <%= userOrders.get(i).isWindow()%>
                 </td>
                 <td>
-                    <a href="Home?command=employee"> Not working yet</a>
+                    <a href="Home?command=parts&orderID=<%= userOrders.get(i).getOrderID()%>"> See Parts List </a>
                 </td>
             </tr>
             <% }%>
         </table>
-        
-        
         <a href="Home?command=design"> Design House</a>
     </body>
 </html>

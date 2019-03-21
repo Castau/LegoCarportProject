@@ -6,11 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import logic.LogicFacade;
 import presentation.Command;
 
-/**
- The purpose of UnknownCommand is to...
 
- @author kasper
- */
 public class UnknownCommand extends Command {
 
     @Override

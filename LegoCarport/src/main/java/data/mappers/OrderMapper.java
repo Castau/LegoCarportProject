@@ -78,7 +78,7 @@ public class OrderMapper {
         return allOrders;
     }
 
-    public ArrayList<HouseOrder> getAllInvoicesByUserID(int userID) throws LEGO_CustomException {
+    public ArrayList<HouseOrder> getAllOrdersByUserID(int userID) throws LEGO_CustomException {
         ArrayList<HouseOrder> allOrders = new ArrayList();
         try {
             Connection con = Connector.connection();
@@ -102,5 +102,42 @@ public class OrderMapper {
             throw new LEGO_CustomException(ex.getMessage());
         }
         return allOrders;
+    }
+
+    public void empUpdateOrder(HouseOrder order) throws LEGO_CustomException {
+        try {
+            Connection con = Connector.connection();
+            String SQL = "UPDATE lego.orders SET order_status = 'SHIPPED' "
+                    + "WHERE id_order = '" + order.getOrderID() + "';";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.executeUpdate();
+
+        } catch (SQLException | ClassNotFoundException ex) {
+            throw new LEGO_CustomException(ex.getMessage());
+        }
+    }
+
+    public HouseOrder getOrderByOrderID(int orderID) throws LEGO_CustomException {
+        HouseOrder order = new HouseOrder();
+        try {
+            Connection con = Connector.connection();
+            String SQL = "SELECT * FROM lego.orders "
+                    + "WHERE id_order = '" + orderID + "';";
+            ResultSet rs = con.prepareStatement(SQL).executeQuery();
+
+            while (rs.next()) {
+                order.setHeight(rs.getInt("height"));
+                order.setWidth(rs.getInt("width"));
+                order.setLength(rs.getInt("length"));
+                order.setDoor(rs.getInt("door") > 0);
+                order.setWindow(rs.getInt("window") > 0);
+                order.setUserID(rs.getInt("id_user"));
+                order.setOrderID(rs.getInt("id_order"));
+                order.setStatus(rs.getString("order_status"));
+            }
+        } catch (SQLException | ClassNotFoundException ex) {
+            throw new LEGO_CustomException(ex.getMessage());
+        }
+        return order;
     }
 }

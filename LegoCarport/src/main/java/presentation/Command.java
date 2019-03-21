@@ -1,5 +1,6 @@
 package presentation;
 
+import presentation.commands.PartsCommand;
 import presentation.commands.UnknownCommand;
 import presentation.commands.DesignHouseCommand;
 import presentation.commands.LoginCommand;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import logic.LogicFacade;
 import presentation.commands.CustomerCommand;
 import presentation.commands.EmployeeCommand;
+import presentation.commands.ShipCommand;
 
 public abstract class Command {
 
@@ -25,6 +27,8 @@ public abstract class Command {
         commands.put("create", new CreateHouseCommand());
         commands.put("customer", new CustomerCommand());
         commands.put("employee", new EmployeeCommand());
+        commands.put("ship", new ShipCommand());
+        commands.put("parts", new PartsCommand());
     }
 
     static Command from( HttpServletRequest request) {

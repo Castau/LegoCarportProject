@@ -1,16 +1,18 @@
 package presentation.commands;
 
+import java.util.ArrayList;
 import logic.LEGO_CustomException;
 import logic.models.User;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import logic.LogicFacade;
+import logic.models.HouseOrder;
 import presentation.Command;
 
 /**
- * 
- * 
+ *
+ *
  * @author Camilla
  */
 public class LoginCommand extends Command {
@@ -25,13 +27,12 @@ public class LoginCommand extends Command {
         session.setAttribute("role", user.getRole());
 
         if (User.Role.employee == user.getRole()) {
-            Command command = new EmployeeCommand();
-            command.execute(request, response, logic);
+            ArrayList<HouseOrder> orders = logic.getAllOrders();
+            request.setAttribute("allOrders", orders);
             return "Employee";
-        }
-        else{
-            Command command = new CustomerCommand();
-            command.execute(request, response, logic);
+        } else {
+            ArrayList<HouseOrder> orders = logic.getAllOrdersByUser(user.getId());
+            request.setAttribute("allUserOrders", orders);
         }
         return "Customer";
     }
