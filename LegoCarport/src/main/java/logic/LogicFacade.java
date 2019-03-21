@@ -25,4 +25,6 @@ public interface LogicFacade {
 
     public ArrayList<HouseOrder> getAllOrders() throws LEGO_CustomException;
     
+    public ArrayList<HouseOrder> getAllOrdersByUser(int userID) throws LEGO_CustomException;
+    
 }

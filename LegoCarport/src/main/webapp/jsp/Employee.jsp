@@ -11,7 +11,6 @@
 <%
     User user = (User) request.getSession().getAttribute("user");
     ArrayList<HouseOrder> orders = (ArrayList<HouseOrder>) request.getAttribute("allOrders");
-    orders.size();
 %>
 
 <html>

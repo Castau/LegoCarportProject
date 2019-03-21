@@ -9,9 +9,9 @@ import logic.LogicFacade;
 import presentation.Command;
 
 /**
- * The purpose of Login is to...
- *
- * @author kasper
+ * 
+ * 
+ * @author Camilla
  */
 public class LoginCommand extends Command {
 
@@ -28,6 +28,10 @@ public class LoginCommand extends Command {
             Command command = new EmployeeCommand();
             command.execute(request, response, logic);
             return "Employee";
+        }
+        else{
+            Command command = new CustomerCommand();
+            command.execute(request, response, logic);
         }
         return "Customer";
     }

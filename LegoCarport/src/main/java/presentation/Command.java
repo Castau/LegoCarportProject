@@ -19,20 +19,20 @@ public abstract class Command {
 
     private static void initCommands() {
         commands = new HashMap<>();
-        commands.put( "login", new LoginCommand() );
-        commands.put( "register", new RegisterCommand() );
-        commands.put( "design", new DesignHouseCommand() );
-        commands.put( "create", new CreateHouseCommand() );
-        commands.put( "customer", new CustomerCommand() );
-        commands.put( "employee", new EmployeeCommand() );
+        commands.put("login", new LoginCommand());
+        commands.put("register", new RegisterCommand());
+        commands.put("design", new DesignHouseCommand());
+        commands.put("create", new CreateHouseCommand());
+        commands.put("customer", new CustomerCommand());
+        commands.put("employee", new EmployeeCommand());
     }
 
-    static Command from( HttpServletRequest request ) {
-        String commandName = request.getParameter( "command" );
+    static Command from( HttpServletRequest request) {
+        String commandName = request.getParameter("command");
         if ( commands == null ) {
             initCommands();
         }
-        return commands.getOrDefault(commandName, new UnknownCommand() );
+        return commands.getOrDefault(commandName, new UnknownCommand());
     }
 
     public abstract String execute( HttpServletRequest request, HttpServletResponse response, LogicFacade logic) 

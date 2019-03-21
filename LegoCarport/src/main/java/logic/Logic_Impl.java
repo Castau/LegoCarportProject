@@ -52,5 +52,9 @@ public class Logic_Impl implements LogicFacade{
     public ArrayList<HouseOrder> getAllOrders() throws LEGO_CustomException{
         return OrderMapper.getInstance().getAllOrders();
     }
-    
+
+    @Override
+    public ArrayList<HouseOrder> getAllOrdersByUser(int userID) throws LEGO_CustomException{
+        return OrderMapper.getInstance().getAllInvoicesByUserID(userID);
+    }
 }
