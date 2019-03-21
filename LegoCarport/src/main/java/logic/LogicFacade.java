@@ -5,6 +5,7 @@
  */
 package logic;
 
+import java.util.ArrayList;
 import logic.models.HouseOrder;
 import logic.models.User;
 
@@ -22,6 +23,6 @@ public interface LogicFacade {
     
     public void createHouse(HouseOrder order) throws LEGO_CustomException;
 
-    public void getAllOrders() throws LEGO_CustomException;
+    public ArrayList<HouseOrder> getAllOrders() throws LEGO_CustomException;
     
 }

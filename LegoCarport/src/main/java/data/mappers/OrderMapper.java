@@ -55,7 +55,7 @@ public class OrderMapper {
         ArrayList<HouseOrder> allOrders = new ArrayList();
         try {
             Connection con = Connector.connection();
-            String SQL = "SELECT * FROM lego.orders;";
+            String SQL = "SELECT * FROM lego.orders; ";
             ResultSet rs = con.prepareStatement(SQL).executeQuery();
 
             while (rs.next()) {

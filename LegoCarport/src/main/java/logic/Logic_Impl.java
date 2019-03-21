@@ -7,6 +7,7 @@ package logic;
 
 import data.mappers.OrderMapper;
 import data.mappers.UserMapper;
+import java.util.ArrayList;
 import logic.models.HouseOrder;
 import logic.models.User;
 import logic.models.User.Role;
@@ -48,8 +49,8 @@ public class Logic_Impl implements LogicFacade{
     }
 
     @Override
-    public void getAllOrders() throws LEGO_CustomException{
-        OrderMapper.getInstance().getAllOrders();
+    public ArrayList<HouseOrder> getAllOrders() throws LEGO_CustomException{
+        return OrderMapper.getInstance().getAllOrders();
     }
     
 }

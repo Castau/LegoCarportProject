@@ -24,10 +24,11 @@ public class LoginCommand extends Command {
         session.setAttribute("user", user);
         session.setAttribute("role", user.getRole());
 
-        if (User.Role.employee != user.getRole()) {
-            return "Customer";
-        } else {
+        if (User.Role.employee == user.getRole()) {
+            Command command = new EmployeeCommand();
+            command.execute(request, response, logic);
             return "Employee";
         }
+        return "Customer";
     }
 }
