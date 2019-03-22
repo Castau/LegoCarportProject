@@ -6,7 +6,10 @@ import javax.servlet.http.HttpServletResponse;
 import logic.LogicFacade;
 import presentation.Command;
 
-
+/**
+ *
+ * @author Camilla
+ */
 public class UnknownCommand extends Command {
 
     @Override

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package presentation;
 
 import logic.LEGO_CustomException;
@@ -14,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import logic.LogicFacade;
-import logic.Logic_Impl;
+import logic.LogicFacade_Impl;
 
 /**
  *
@@ -23,7 +18,7 @@ import logic.Logic_Impl;
 @WebServlet(name = "FrontController", urlPatterns = {"/Home"})
 public class FrontController extends HttpServlet {
 
-    private final LogicFacade logic = new Logic_Impl();
+    private final LogicFacade logic = new LogicFacade_Impl();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

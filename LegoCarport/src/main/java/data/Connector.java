@@ -6,15 +6,10 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 /**
- * The purpose of Connector is to...
  *
- * @author kasper
+ * @author Camilla
  */
 public class Connector {
-
-//    private static final String URL = "localhost";
-//    private static final String USERNAME = "root";
-//    private static final String PASSWORD = "1234";
     
     private static final String IP = "localhost";
     private static final String PORT = "3306";
@@ -49,7 +44,6 @@ public class Connector {
                 ex.printStackTrace();
                 throw new SQLException(ex.getMessage());
             }
-            //singleton = DriverManager.getConnection("jdbc:mysql://"+URL, USERNAME, PASSWORD);
         }
         return singleton;
     }

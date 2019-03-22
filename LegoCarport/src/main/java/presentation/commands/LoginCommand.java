@@ -12,7 +12,6 @@ import presentation.Command;
 
 /**
  *
- *
  * @author Camilla
  */
 public class LoginCommand extends Command {

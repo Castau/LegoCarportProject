@@ -15,6 +15,10 @@ import presentation.commands.CustomerCommand;
 import presentation.commands.EmployeeCommand;
 import presentation.commands.ShipCommand;
 
+/**
+ *
+ * @author Camilla
+ */
 public abstract class Command {
 
     private static HashMap<String, Command> commands;

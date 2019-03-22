@@ -10,6 +10,10 @@ import logic.LogicFacade;
 import logic.models.HouseOrder;
 import presentation.Command;
 
+/**
+ *
+ * @author Camilla
+ */
 public class RegisterCommand extends Command {
 
     @Override

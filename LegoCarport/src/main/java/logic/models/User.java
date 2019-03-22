@@ -1,7 +1,6 @@
 package logic.models;
 
 /**
- * 
  *
  * @author Camilla
  */
