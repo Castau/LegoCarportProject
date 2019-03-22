@@ -8,6 +8,8 @@ package logic;
 import data.mappers.OrderMapper;
 import data.mappers.UserMapper;
 import java.util.ArrayList;
+import logic.PartsCalculation.Row;
+import logic.PartsCalculation.Side;
 import logic.models.HouseOrder;
 import logic.models.Parts;
 import logic.models.User;
@@ -17,17 +19,17 @@ import logic.models.User.Role;
  *
  * @author Camilla
  */
-public class Logic_Impl implements LogicFacade{
+public class Logic_Impl implements LogicFacade {
 
     @Override
     public User login(String email, String password) throws LEGO_CustomException {
-        return UserMapper.getInstance().login( email, password );
+        return UserMapper.getInstance().login(email, password);
     }
 
     @Override
     public User createUser(String email, String password) throws LEGO_CustomException {
         User user = new User(email, password, Role.customer);
-        UserMapper.getInstance().createUser( user );
+        UserMapper.getInstance().createUser(user);
         return user;
     }
 
@@ -37,108 +39,102 @@ public class Logic_Impl implements LogicFacade{
     }
 
     @Override
-    public ArrayList<HouseOrder> getAllOrders() throws LEGO_CustomException{
+    public ArrayList<HouseOrder> getAllOrders() throws LEGO_CustomException {
         return OrderMapper.getInstance().getAllOrders();
     }
 
     @Override
-    public ArrayList<HouseOrder> getAllOrdersByUser(int userID) throws LEGO_CustomException{
+    public ArrayList<HouseOrder> getAllOrdersByUser(int userID) throws LEGO_CustomException {
         return OrderMapper.getInstance().getAllOrdersByUserID(userID);
     }
 
     @Override
-    public void updateOrder(HouseOrder order) throws LEGO_CustomException{
+    public void updateOrder(HouseOrder order) throws LEGO_CustomException {
         OrderMapper.getInstance().empUpdateOrder(order);
     }
 
     @Override
-    public Parts getPartsList(int orderID) throws LEGO_CustomException{
-        
+    public Parts getPartsList(int orderID) throws LEGO_CustomException {
+
         // first edition
-        
         HouseOrder houseOrder = OrderMapper.getInstance().getOrderByOrderID(orderID);
         int length = houseOrder.getLength();
         int width = houseOrder.getWidth();
         int height = houseOrder.getHeight();
         boolean door = houseOrder.isDoor();
         boolean window = houseOrder.isWindow();
-        
+
         // to make rows stack in "forbandt"
-        int calcLength = length-2;
-        int calcWidth = width-2;
-        
-        int layerAmountFours = amountFours(calcLength, calcWidth);
-        int layerAmountTwos = amountTwos(calcLength, calcWidth);
-        int layerAmountOnes = amountOnes(calcLength, calcWidth);
-        
-//        // amount of 4x2 bricks pr. side
-//        int amountFoursLength = calcLength/4;
-//        int amountFoursWidth = calcWidth/4;
-        
-//        // remainder after four bricks are placed pr. side
-//        int remainderTwosLength = calcLength%4;
-//        int remainderTwosWidth = calcWidth%4;
-//        
-//        // amount of 2x2 bricks pr. side
-//        int amountTwosLength = remainderTwosLength/2;
-//        int amountTwosWidth = remainderTwosWidth/2;
-        
-        // amount(remainder) of 1x2 bricks pr. side
-//        int amountOnesLength = remainderTwosLength%2;
-//        int amountOnesWidth = remainderTwosWidth%2;
-        
-        // total amount of the different bricks pr. layer
-//        int layerAmountFours = (amountFoursWidth + amountFoursLength)*2;
-//        int layerAmountTwos = (amountTwosLength + amountTwosWidth)*2;
-//        int layerAmountOnes = (amountOnesLength + amountOnesWidth)*2;
-        
-        // TO DO:
-        // make room for door and window 
-        // set condition for house (also in frontend) size with and without door & window
-        // get rid of wasteful integers
-        
-        return new Parts((layerAmountOnes*height), (layerAmountTwos*height), (layerAmountFours*height), door, window); //dummy data
+        int calcLength = length - 2;
+        int calcWidth = width - 2;
+
+        Side lengthOne = new Side();
+        Side lengthTwo = new Side();
+        Side widthOne = new Side();
+        Side widthTwo = new Side();
+
+        for (int i = 0; i < height; i++) {
+            if(door){
+               lengthOne.getRows().add(calculateRowWithElement(calcLength, i, 2, 4)); 
+            }
+            else{
+                lengthOne.getRows().add(calculateRow(calcLength));
+            }
+            if(window){
+                widthOne.getRows().add(calculateRowWithElement(calcWidth, i, 2, 2)); 
+            }
+            else{
+                widthOne.getRows().add(calculateRow(calcWidth));
+            }
+
+            lengthTwo.getRows().add(calculateRow(calcLength));
+            widthTwo.getRows().add(calculateRow(calcWidth));
+        }
+
+        Parts parts = buildParts(lengthOne, lengthTwo, widthOne, widthTwo, door, window);
+
+        return parts; 
     }
-    
-    private int amountFours(int calcLength, int calcWidth){
-        // amount of 4x2 bricks pr. side
-        int amountFoursLength = calcLength/4;
-        int amountFoursWidth = calcWidth/4;
-        
-        // total amount of fours pr. layer
-        int layerAmountFours = (amountFoursWidth + amountFoursLength)*2;
-        return layerAmountFours;
+
+    private Row calculateRow(int length) {
+        int amountFours = length / 4;
+        int remainderTwos = length % 4;
+        int amountTwos = remainderTwos / 2;
+        int amountOnes = remainderTwos % 2;
+
+        return new Row(amountFours, amountTwos, amountOnes);
     }
-    
-    private int amountTwos(int calcLength, int calcWidth){
-        // remainder after four bricks are placed pr. side
-        int remainderTwosLength = calcLength%4;
-        int remainderTwosWidth = calcWidth%4;
+
+    private Row calculateRowWithElement(int width, int height, int elementWidth, int elementHeight) {
+        int lengthNoElement = width - elementWidth;
+        int lengthLeft = lengthNoElement/2;
+        int lengthRigth = lengthNoElement-lengthLeft;
         
-        // amount of 2x2 bricks pr. side
-        int amountTwosLength = remainderTwosLength/2;
-        int amountTwosWidth = remainderTwosWidth/2;
-        
-        int layerAmountTwos = (amountTwosLength + amountTwosWidth)*2;
-        return layerAmountTwos;
+        if (height >= elementHeight) {
+            return calculateRow(width);
+        }
+
+        if (height % 2 == 0) {
+            Row left = calculateRow(lengthLeft);
+            Row right = calculateRow(lengthRigth);
+            left.addRowToRow(right);
+            
+            return left;
+            
+        } else {
+            Row left = calculateRow(lengthLeft - 2);
+            Row right = calculateRow(lengthRigth + 2);
+            left.addRowToRow(right);   
+            
+            return left;
+        }
     }
-    
-    private int amountOnes(int calcLength, int calcWidth){
-        int remainderTwosLength = calcLength%4;
-        int remainderTwosWidth = calcWidth%4;
-        
-        int amountOnesLength = remainderTwosLength%2;
-        int amountOnesWidth = remainderTwosWidth%2;
-        
-        int layerAmountOnes = (amountOnesLength + amountOnesWidth)*2;
-        return layerAmountOnes;
+
+    private Parts buildParts(Side lengthOne, Side lengthTwo, Side widthOne, Side widthTwo, boolean door, boolean window) {
+        int fours = lengthOne.amountFours() + lengthTwo.amountFours() + widthOne.amountFours() + widthTwo.amountFours();
+        int twos = lengthOne.amountTwos() + lengthTwo.amountTwos() + widthOne.amountTwos() + widthTwo.amountTwos();
+        int ones = lengthOne.amountOnes() + lengthTwo.amountOnes() + widthOne.amountOnes() + widthTwo.amountOnes();
+
+        return new Parts(ones, twos, fours, door, window);
     }
-    
-    // door is 2 fours wide and 4 layers high
-    private int amountFoursWithDoo(int calcLength, int calcWidth){
-        int calcLengthDoorSide = (calcLength - 1);
-        
-        return 0;
-    }
-    
 }
