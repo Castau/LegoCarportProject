@@ -19,7 +19,7 @@ This was an individual project.
 [Direct link](https://datsoftlyngby.github.io/dat2sem2019Spring/Modul3/LegoHus.html) to CPHBusiness githuppages.
 
  
-#### Calculation Visualizations
+### Calculation Visualizations
 
 
 Calculation visualization for an order with the folowing dimensions:
@@ -31,7 +31,7 @@ Calculation visualization for an order with the folowing dimensions:
 <img src="https://github.com/Castau/LegoCarportProject/blob/master/Docs/CalculationVisual.PNG?raw=true" alt = "calculation visual" height="600" width="400"/> 
 
 
-#### Web Application ScreenShots  
+### Web Application ScreenShots  
 
 Index (Login & Register)
 
