@@ -25,7 +25,7 @@ This was an individual project.
 #### Calculation Visualizations
 
 
-Calculation visualization with the folowing dimensions:
+Calculation visualization for an order with the folowing dimensions:
 * Length: 10
 * Width: 10
 * Height: 5
