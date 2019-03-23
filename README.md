@@ -35,22 +35,22 @@ Calculation visualization for an order with the folowing dimensions:
 
 ### Web Application ScreenShots  
 
-Index (Login & Register)
+Login & Register - The application index page
 
 <img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/Index.PNG" alt = "calculation visual" height="600" width="800"/> 
 
-Customer
+Customer view - with own orders overview
 
 <img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/CustomerHomePage.PNG" alt = "calculation visual" height="600" width="800"/> 
 
-Employee
+Employee view - with all orders overview
 
 <img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/EmployeeHomePage.PNG" alt = "calculation visual" height="600" width="800"/> 
 
-Designer
+Designer - Form to place Lego house orders
 
 <img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/HouseDesigner.PNG" alt = "calculation visual" height="600" width="800"/> 
 
-Partslist
+Partslist - Specific orders partslist
 
 <img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/PartsList.PNG" alt = "calculation visual" height="600" width="800"/> 
