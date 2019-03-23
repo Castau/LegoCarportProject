@@ -14,6 +14,8 @@
     <body>
 
         <h1>Design your Lego House</h1>
+        <p>In order to make sure that there is room to fit a door and a window <br> the minimum requirements for dimensions of the House are:</p>
+        <p>Length min.: 8 <br> Width min.: 8 <br> Height min.: 5</p>
 
         <table>
             <tr><td>Designer</td>
@@ -21,13 +23,13 @@
                     <form name="design" action="Home" method="POST">
                         <input type="hidden" name="command" value="create">
                         Length:<br>
-                        <input type="number" name="length" value="" required min="1">
+                        <input type="number" name="length" value="" required min="8">
                         <br>
                         Width:<br>
-                        <input type="number" name="width" value="" required min="1">
+                        <input type="number" name="width" value="" required min="8">
                         <br>
                         Height:<br>
-                        <input type="number" name="height" value="" required min="1">
+                        <input type="number" name="height" value="" required min="5">
                         <br>
                         <br>
                         <input type="checkbox" name="door" value="door"> Add Front Door<br>

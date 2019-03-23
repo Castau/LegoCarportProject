@@ -29,6 +29,9 @@ public class CreateHouseCommand extends Command {
         order.setWindow(request.getParameter("window") != null);
         order.setUserID(user.getId());
 
+        if(!(order.getHeight()>= 5 && order.getLength()>= 8 && order.getWidth() >= 8)){
+            throw new LEGO_CustomException("House dimensions does not meet minimum requirements");           
+        }
         logic.saveHouse(order);
 
         ArrayList<HouseOrder> orders = logic.getAllOrdersByUser(user.getId());

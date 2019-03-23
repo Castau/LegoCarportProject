@@ -1,5 +1,6 @@
 package logic.PartsCalculation;
 
+import logic.LEGO_CustomException;
 import logic.models.HouseOrder;
 import logic.models.Parts;
 
@@ -10,7 +11,10 @@ import logic.models.Parts;
 public class PartsGenerator {
     
 
-    public Parts generateParts(HouseOrder order){
+    public Parts generateParts(HouseOrder order) throws LEGO_CustomException{
+        if(!(order.getHeight()>= 5 && order.getLength()>= 8 && order.getWidth() >= 8)){
+            throw new LEGO_CustomException("House dimensions does not meet minimum requirements");           
+        }
         int length = order.getLength();
         int width = order.getWidth();
         int height = order.getHeight();
