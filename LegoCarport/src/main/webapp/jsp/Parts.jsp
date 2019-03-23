@@ -19,32 +19,19 @@
             <h1>Parts List for Order nr: <%=orderId%></h1>
             <table class='centerElement table table-hover'>
                 <tr>
-                    <th>
-                        1x2 Brick
-                    </th>
-                    <th>
-                        2x2 Brick
-                    </th>
-                    <th>
-                        4x2 Brick
-                    </th>
-                    <th>
-                        Door
-                    </th>
-                    <th>
-                        Window
-                    </th>
-                </tr>
+                    <th>1x2 Brick</th>
+                    <td><%= orderParts.getOnes()%></td>
+                    </th> 
                 <tr>
-                    <td>
-                        <%= orderParts.getOnes()%>
-                    </td>
-                    <td>
-                        <%= orderParts.getTwos()%>
-                    </td>
-                    <td>
-                        <%= orderParts.getFours()%>
-                    </td>
+                    <th>2x2 Brick</th>
+                    <td><%= orderParts.getTwos()%></td>
+                    </th>
+                <tr>
+                    <th>4x2 Brick</th>
+                    <td><%= orderParts.getFours()%></td>
+                    </th>
+                <tr>
+                    <th>Door</th>
                     <td>
                         <% if (orderParts.isDoor()) { %>
                         <i class="fa fa-check"></i>
@@ -52,6 +39,9 @@
                         <i class="fa fa-times"></i>
                         <% }%>
                     </td>
+                    </th>
+                <tr>
+                    <th>Window</th>
                     <td>
                         <% if (orderParts.isWindow()) { %>
                         <i class="fa fa-check"></i>
