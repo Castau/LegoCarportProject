@@ -85,6 +85,8 @@
             </tr>
             <% }%>
         </table>
+        <br/>
+        <br/>
         <a href="Home?command=design"> Design House</a>
     </body>
 </html>

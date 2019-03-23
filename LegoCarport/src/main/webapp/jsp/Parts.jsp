@@ -20,7 +20,7 @@
     </head>
     <body>
         <h1>Parts List for Order nr: <%=orderId%></h1>
-        
+
         <table>
             <tr>
                 <th>
@@ -41,22 +41,28 @@
             </tr>
             <tr>
                 <td>
-                    <%= orderParts.getOnes() %>
+                    <%= orderParts.getOnes()%>
                 </td>
                 <td>
-                    <%= orderParts.getTwos() %>
+                    <%= orderParts.getTwos()%>
                 </td>
                 <td>
-                    <%= orderParts.getFours() %>
+                    <%= orderParts.getFours()%>
                 </td>
                 <td>
-                    <%= orderParts.isDoor() %>
+                    <%= orderParts.isDoor()%>
                 </td>
                 <td>
-                    <%= orderParts.isWindow() %>
+                    <%= orderParts.isWindow()%>
                 </td>
             </tr>
         </table>
-        
+        <br/>
+        <br/>
+        <% if (User.Role.employee == user.getRole()) { %>
+        <a href="Home?command=employee"> Back to Employee Page</a>
+        <% } else { %>
+        <a href="Home?command=customer"> Back to Customer Page</a>
+        <% } %>
     </body>
 </html>

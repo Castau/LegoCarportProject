@@ -38,5 +38,8 @@
                 </td></tr>
             </tr>
         </table>
+        <br/>
+        <br/>
+        <a href="Home?command=customer"> Back to Customer Page</a>
     </body>
 </html>
