@@ -39,11 +39,11 @@ Index (Login & Register)
 
 Customer
 
-<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/CustomerHomePage.PNG" alt = "calculation visual" height="800" width="1000"/> 
+<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/CustomerHomePage.PNG" alt = "calculation visual" height="700" width="1000"/> 
 
 Employee
 
-<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/EmployeeHomePage.PNG" alt = "calculation visual" height="800" width="1000"/> 
+<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/EmployeeHomePage.PNG" alt = "calculation visual" height="700" width="1000"/> 
 
 Designer
 
@@ -51,4 +51,4 @@ Designer
 
 Partslist
 
-<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/PartsList.PNG" alt = "calculation visual" height="800" width="1000"/> 
+<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/PartsList.PNG" alt = "calculation visual" height="700" width="1000"/> 
