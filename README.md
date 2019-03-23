@@ -21,4 +21,4 @@ This was an individual project.
 
  
 #### Calculation Visualizations
-<img tekst-align="center" src="https://github.com/Castau/LegoCarportProject/blob/master/Docs/CalculationVisual.PNG?raw=true" alt = "calculation visual" height="600" width="400"/> 
+<img tekst-align="mid" src="https://github.com/Castau/LegoCarportProject/blob/master/Docs/CalculationVisual.PNG?raw=true" alt = "calculation visual" height="600" width="400"/> 
