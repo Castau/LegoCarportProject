@@ -24,7 +24,8 @@ This was an individual project.
  
 #### Calculation Visualizations
 
-Calculation visualizations with the folowing dimensions:
+
+Calculation visualization with the folowing dimensions:
 * Length: 10
 * Width: 10
 * Height: 5
