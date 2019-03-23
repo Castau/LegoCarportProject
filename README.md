@@ -12,6 +12,7 @@ This was an individual project.
 4) Clean & build, then run
 
 #### [Project description](https://datsoftlyngby.github.io/dat2sem2019Spring/Modul3/LegoHus.html)
+Direct link to CPHBusiness githuppages.
 
 #### Web Application ScreenShots  
  
