@@ -33,4 +33,4 @@ Calculation visualization for an order with the folowing dimensions:
 
 #### Web Application ScreenShots  
 
-<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/CustomerHomePage.PNG" alt = "calculation visual" height="1200" width="800"/> 
+<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/CustomerHomePage.PNG" alt = "calculation visual" height="1200" width="600"/> 
