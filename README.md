@@ -14,6 +14,8 @@ This was an individual project.
     * Customer-login: cust@test.dk with password: 1234
 4) Clean & build, then run.
 
+<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/ConnectorSettings.png" alt = "calculation visual" height="400" width="800"/>
+
 
 #### Project description
 [Direct link](https://datsoftlyngby.github.io/dat2sem2019Spring/Modul3/LegoHus.html) to CPHBusiness githuppages.  
@@ -32,7 +34,6 @@ Calculation visualization for an order with the folowing dimensions:
 * Window: yes
 <img src="https://github.com/Castau/LegoCarportProject/blob/master/Docs/CalculationVisual.PNG?raw=true" alt = "calculation visual" height="600" width="400"/> 
 
-<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/ConnectorSettings.png" alt = "calculation visual" height="400" width="800"/>
 
 ### Web Application ScreenShots  
 
