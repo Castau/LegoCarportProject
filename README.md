@@ -18,9 +18,6 @@ This was an individual project.
 #### Project description
 [Direct link](https://datsoftlyngby.github.io/dat2sem2019Spring/Modul3/LegoHus.html) to CPHBusiness githuppages.
 
-
-#### Web Application ScreenShots  
-
  
 #### Calculation Visualizations
 
@@ -33,3 +30,7 @@ Calculation visualization for an order with the folowing dimensions:
 * Window: yes
 <img src="https://github.com/Castau/LegoCarportProject/blob/master/Docs/CalculationVisual.PNG?raw=true" alt = "calculation visual" height="600" width="400"/> 
 
+
+#### Web Application ScreenShots  
+
+<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/CustomerHomePage.PNG" alt = "calculation visual" height="600" width="400"/> 
