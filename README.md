@@ -21,6 +21,5 @@ This was an individual project.
 
  
 #### Calculation Visualizations
-<p align="center">
 <img src="https://github.com/Castau/LegoCarportProject/blob/master/Docs/CalculationVisual.PNG?raw=true" alt = "calculation visual" height="600" width="400"/> 
-</p>
+
