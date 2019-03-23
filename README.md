@@ -35,20 +35,20 @@ Calculation visualization for an order with the folowing dimensions:
 
 Index (Login & Register)
 
-<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/Index.PNG" alt = "calculation visual" height="600" width="900"/> 
+<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/Index.PNG" alt = "calculation visual" height="600" width="800"/> 
 
 Customer
 
-<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/CustomerHomePage.PNG" alt = "calculation visual" height="600" width="900"/> 
+<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/CustomerHomePage.PNG" alt = "calculation visual" height="600" width="800"/> 
 
 Employee
 
-<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/EmployeeHomePage.PNG" alt = "calculation visual" height="600" width="900"/> 
+<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/EmployeeHomePage.PNG" alt = "calculation visual" height="600" width="800"/> 
 
 Designer
 
-<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/HouseDesigner.PNG" alt = "calculation visual" height="600" width="900"/> 
+<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/HouseDesigner.PNG" alt = "calculation visual" height="600" width="800"/> 
 
 Partslist
 
-<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/PartsList.PNG" alt = "calculation visual" height="600" width="900"/> 
+<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/PartsList.PNG" alt = "calculation visual" height="600" width="800"/> 
