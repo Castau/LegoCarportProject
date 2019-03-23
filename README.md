@@ -23,5 +23,12 @@ This was an individual project.
 
  
 #### Calculation Visualizations
+
+Calculation visualizations with the folowing dimensions:
+* Length: 10
+* Width: 10
+* Height: 5
+* Door: yes
+* Window: yes
 <img src="https://github.com/Castau/LegoCarportProject/blob/master/Docs/CalculationVisual.PNG?raw=true" alt = "calculation visual" height="600" width="400"/> 
 
