@@ -18,7 +18,7 @@ Direct link to CPHBusiness githuppages.
 
 
 #### Web Application ScreenShots  
-<img src="https://github.com/Castau/LegoCarportProject/blob/master/Docs/CalculationVisual.PNG?raw=true" alt = "calculation visual" height="900" width="500"/> 
+<img src="https://github.com/Castau/LegoCarportProject/blob/master/Docs/CalculationVisual.PNG?raw=true" alt = "calculation visual" height="800" width="400"/> 
  
 #### Calculation Visualizations
 
