@@ -14,7 +14,7 @@ This was an individual project.
     * Customer-login: cust@test.dk with password: 1234
 4) Clean & build, then run.
 
-<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/ConnectorSettings.png" alt = "calculation visual" height="400" width="800"/>
+<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/ConnectorSettings.png" alt = "calculation visual" height="300" width="600"/>
 
 
 #### Project description
