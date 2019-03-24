@@ -26,7 +26,7 @@ This application uses the [sample login](https://github.com/DAT2SemKode/Modul3Lo
 ### Calculation Visualizations
 
 
-Calculation visualization for an order with the folowing dimensions:
+Calculation visualization for an order with the following dimensions:
 * Length: 10
 * Width: 10
 * Height: 5
