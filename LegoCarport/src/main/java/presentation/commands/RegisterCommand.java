@@ -28,7 +28,7 @@ public class RegisterCommand extends Command {
             session.setAttribute("role", user.getRole());
             ArrayList<HouseOrder> orders = logic.getAllOrdersByUser(user.getId());
             request.setAttribute("allUserOrders", orders);
-            return "Customer";
+            return "/jsp/" + "Customer";
         } else {
             throw new LegoCustomException("the two passwords did not match");
         }

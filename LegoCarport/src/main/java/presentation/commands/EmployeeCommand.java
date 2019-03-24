@@ -27,6 +27,6 @@ public class EmployeeCommand extends Command{
         }
         ArrayList<HouseOrder> orders = logic.getAllOrders();
         request.setAttribute("allOrders", orders);
-        return "Employee";
+        return "/jsp/" + "Employee";
     }
 }

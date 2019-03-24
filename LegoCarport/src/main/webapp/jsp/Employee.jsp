@@ -12,7 +12,6 @@
     User user = (User) request.getSession().getAttribute("user");
     ArrayList<HouseOrder> orders = (ArrayList<HouseOrder>) request.getAttribute("allOrders");
 %>
-<body>
     <div class='center'>
         <div class='legoContainer center'>
             <h1>Logged in as: <%= user.getEmail()%> </h1>
@@ -92,7 +91,7 @@
                     <td>
                         <form name="shipbutton" action="Home" method="POST">
                             <input type="hidden" name="command" value="ship">
-                            <button class='btnSmall marginBottom1' name="ship" type="submit" value="<%= orders.get(i).getOrderID()%>">
+                            <button class='btnSmall' name="ship" type="submit" value="<%= orders.get(i).getOrderID()%>">
                                 Ship Order
                             </button>
                         </form>

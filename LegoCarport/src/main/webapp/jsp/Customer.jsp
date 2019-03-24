@@ -14,7 +14,6 @@
     User user = (User) request.getSession().getAttribute("user");
     ArrayList<HouseOrder> userOrders = (ArrayList<HouseOrder>) request.getAttribute("allUserOrders");
 %>
-<body>
     <div class='center'>
         <div class='legoContainer center'>
             <h1>Logged in as: <%= user.getEmail()%> </h1>

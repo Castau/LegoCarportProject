@@ -29,11 +29,11 @@ public class LoginCommand extends Command {
         if (User.Role.employee == user.getRole()) {
             ArrayList<HouseOrder> orders = logic.getAllOrders();
             request.setAttribute("allOrders", orders);
-            return "Employee";
+            return "/jsp/" + "Employee";
         } else {
             ArrayList<HouseOrder> orders = logic.getAllOrdersByUser(user.getId());
             request.setAttribute("allUserOrders", orders);
         }
-        return "Customer";
+        return "/jsp/" + "Customer";
     }
 }

@@ -28,7 +28,7 @@ public class FrontController extends HttpServlet {
             validateSession(request);
             Command command = Command.from(request);
             String view = command.execute(request, response, logic);
-            request.getRequestDispatcher("/jsp/" + view + ".jsp").forward(request, response);
+            request.getRequestDispatcher(view + ".jsp").forward(request, response);
 
         } catch (LegoCustomException ex) {
             request.setAttribute("error", ex.getMessage());

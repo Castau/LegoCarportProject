@@ -27,4 +27,5 @@ public interface LogicFacade {
 
     public Parts getPartsList(int parseInt)throws LegoCustomException;
     
+    public HouseOrder getOrderByID(int orderID) throws LegoCustomException;
 }

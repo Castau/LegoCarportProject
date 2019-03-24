@@ -55,4 +55,9 @@ public class LogicFacade_Impl implements LogicFacade {
         PartsGenerator partsGenerator = new PartsGenerator();
         return partsGenerator.generateParts(houseOrder);
     }
+
+    @Override
+    public HouseOrder getOrderByID(int orderID) throws LegoCustomException {
+        return OrderMapper.getInstance().getOrderByOrderID(orderID);
+    }
 }

@@ -5,7 +5,6 @@
 --%>
 <jsp:include page='Header.jsp'></jsp:include>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<body>
     <div class='center'>
         <div class='legoContainer center'>
             <h1>Design your Lego House</h1>

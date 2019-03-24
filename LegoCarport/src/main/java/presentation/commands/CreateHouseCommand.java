@@ -38,7 +38,7 @@ public class CreateHouseCommand extends Command {
         ArrayList<HouseOrder> orders = logic.getAllOrdersByUser(user.getId());
         request.setAttribute("allUserOrders", orders);
 
-        return "Customer";
+        return "/jsp/" + "Customer";
     }
 
 }

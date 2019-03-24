@@ -21,7 +21,7 @@ public class ShipCommand extends Command{
         
         // check if user has rights to ship an order
         if (User.Role.employee != user.getRole()){
-            return "Customer";            
+            return "/jsp/" + "Customer";            
         }
         
         HouseOrder order = new HouseOrder();
@@ -30,6 +30,6 @@ public class ShipCommand extends Command{
         
         ArrayList<HouseOrder> orders = logic.getAllOrders();
         request.setAttribute("allOrders", orders);
-        return "Employee";
+        return "/jsp/" + "Employee";
     }
 }

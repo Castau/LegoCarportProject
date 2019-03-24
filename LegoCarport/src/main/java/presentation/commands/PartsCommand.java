@@ -25,13 +25,14 @@ public class PartsCommand extends Command {
         if (User.Role.employee != user.getRole() && !userHasOrder(logic, user)) {
             ArrayList<HouseOrder> orders = logic.getAllOrdersByUser(user.getId());
             request.setAttribute("allUserOrders", orders);
-            return "Customer";
+            return "/jsp/" + "Customer";
         }
-        
+        HouseOrder houseOrder = logic.getOrderByID(Integer.parseInt(request.getParameter("orderID")));
         Parts partslist = logic.getPartsList(Integer.parseInt(request.getParameter("orderID")));
         request.setAttribute("parts", partslist);
+        request.setAttribute("houseorder", houseOrder);
 
-        return "Parts";
+        return "/jsp/" + "Parts";
     }
 
     // help method for checking if a user has any orders

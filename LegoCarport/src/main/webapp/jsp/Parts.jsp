@@ -3,6 +3,7 @@
     Created on : 21-03-2019, 19:16:57
     Author     : Camilla
 --%>
+<%@page import="logic.models.HouseOrder"%>
 <jsp:include page='Header.jsp'></jsp:include>
 <%@page import="logic.models.Parts"%>
 <%@page import="logic.models.User"%>
@@ -12,11 +13,12 @@
     User user = (User) request.getSession().getAttribute("user");
     Parts orderParts = (Parts) request.getAttribute("parts");
     int orderId = Integer.parseInt(request.getParameter("orderID"));
+    HouseOrder houseOrder = (HouseOrder) request.getAttribute("houseorder");
 %>
-<body>
     <div class='center'>
         <div class='legoContainer center'>
             <h1>Parts List for Order nr: <%=orderId%></h1>
+            <p>The order has the following dimensions: <br> Length <%=houseOrder.getLength()%> | Width  <%=houseOrder.getWidth()%> | Height <%=houseOrder.getHeight()%></p>
             <table class='centerElement table table-hover'>
                 <tr>
                     <th>1x2 Brick</th>

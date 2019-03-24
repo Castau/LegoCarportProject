@@ -56,6 +56,7 @@ h1
     padding: 10px 14px; /* Some padding */
     font-size: 12px; /* Set a font size */
     cursor: pointer; /* Mouse pointer on hover */
+    border-radius: 4px;
 }
 
 /* Darker background on mouse-over */
@@ -104,6 +105,11 @@ a:visited:hover
     text-align: left;
 }
 
+.textright
+{
+    text-align: right;
+}
+
 .width100p
 {
     width: 100%;
@@ -112,4 +118,8 @@ a:visited:hover
 .iconMarginRight
 {
     margin-right: 10px;
+}
+
+td{
+    vertical-align: middle !important;
 }

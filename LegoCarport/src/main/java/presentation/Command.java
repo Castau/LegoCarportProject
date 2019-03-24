@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import logic.LogicFacade;
 import presentation.commands.CustomerCommand;
 import presentation.commands.EmployeeCommand;
+import presentation.commands.LogoutCommand;
 import presentation.commands.ShipCommand;
 
 /**
@@ -33,6 +34,7 @@ public abstract class Command {
         commands.put("employee", new EmployeeCommand());
         commands.put("ship", new ShipCommand());
         commands.put("parts", new PartsCommand());
+        commands.put("logout", new LogoutCommand());
     }
 
     static Command from( HttpServletRequest request) {

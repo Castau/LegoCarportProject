@@ -14,7 +14,7 @@ public class DesignHouseCommand extends Command {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response, LogicFacade logic) throws LegoCustomException {
-        return "DesignHouse";
+        return "/jsp/" + "DesignHouse";
 
     }
 

@@ -1,27 +1,29 @@
 package presentation.commands;
 
-import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import logic.LegoCustomException;
 import logic.LogicFacade;
-import logic.models.HouseOrder;
-import logic.models.User;
 import presentation.Command;
 
 /**
  *
  * @author Camilla
  */
-
-public class CustomerCommand extends Command{
+public class LogoutCommand extends Command {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response, LogicFacade logic) throws LegoCustomException {
+        HttpSession session = request.getSession();
         
-        User user = (User) request.getSession().getAttribute("user");
-        ArrayList<HouseOrder> orders = logic.getAllOrdersByUser(user.getId());
-        request.setAttribute("allUserOrders", orders);
-        return "/jsp/" + "Customer";
+        try {
+            session.setAttribute("user", null);
+            session.invalidate();
+            return "index";
+            
+        } catch (IllegalStateException ex) {
+            throw new LegoCustomException("Session Invalid");
+        }
     }
 }
