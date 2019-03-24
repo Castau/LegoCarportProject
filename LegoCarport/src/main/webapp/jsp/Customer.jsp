@@ -19,10 +19,8 @@
         <div class='legoContainer center'>
             <h1>Logged in as: <%= user.getEmail()%> </h1>
             <p>You are now logged in as a CUSTOMER. <br> Design a new house or check your previous orders</p>
-
             <a href="Home?command=design" class='button'> <button class="btn marginBottom1"><i class="fa fa-home"></i> Design House</button></a>
-
-            <table class='centerElement table table-hover'>
+            <table class='centerElement table table-hover marginTop1'>
                 <tr>
                     <th>
                         Order ID

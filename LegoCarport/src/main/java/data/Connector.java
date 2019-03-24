@@ -11,12 +11,16 @@ import java.util.Properties;
  */
 public class Connector {
     
+    // The connector is made as singletons, so that only one instance can exist
+    // at a time, since the state of the object never change.
+    
+    // make sure to run one of the createscripts found in the SQL_files folder
     private static final String IP = "localhost";
     private static final String PORT = "3306";
     public static final String DATABASE = "lego";
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "1234";
-
+    private static final String USERNAME = "root"; // change to match your workbench username
+    private static final String PASSWORD = "1234"; // change to match your workbench password
+    
     private static Connection singleton;
 
     public static void setConnection(Connection con) {

@@ -3,7 +3,7 @@ package presentation.commands;
 import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import logic.LEGO_CustomException;
+import logic.LegoCustomException;
 import logic.LogicFacade;
 import logic.models.HouseOrder;
 import logic.models.User;
@@ -16,8 +16,11 @@ import presentation.Command;
 public class EmployeeCommand extends Command{
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response, LogicFacade logic) throws LEGO_CustomException {
+    public String execute(HttpServletRequest request, HttpServletResponse response, LogicFacade logic) throws LegoCustomException {
         User user = (User) request.getSession().getAttribute("user");
+        
+        // checking if it's an employee or a customer and returning customers to 
+        // the Customer Home Page
         if (User.Role.employee != user.getRole()){
             return "Customer";
             

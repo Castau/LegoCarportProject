@@ -3,7 +3,7 @@ package presentation.commands;
 import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import logic.LEGO_CustomException;
+import logic.LegoCustomException;
 import logic.LogicFacade;
 import logic.models.HouseOrder;
 import logic.models.Parts;
@@ -17,11 +17,12 @@ import presentation.Command;
 public class PartsCommand extends Command {
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response, LogicFacade logic) throws LEGO_CustomException {
+    public String execute(HttpServletRequest request, HttpServletResponse response, LogicFacade logic) throws LegoCustomException {
 
         User user = (User) request.getSession().getAttribute("user");
 
-        if (User.Role.employee != user.getRole() && !userHasOrder(request, logic, user)) {
+        // check for if user has rights to view this partslist
+        if (User.Role.employee != user.getRole() && !userHasOrder(logic, user)) {
             ArrayList<HouseOrder> orders = logic.getAllOrdersByUser(user.getId());
             request.setAttribute("allUserOrders", orders);
             return "Customer";
@@ -33,7 +34,8 @@ public class PartsCommand extends Command {
         return "Parts";
     }
 
-    private boolean userHasOrder(HttpServletRequest request, LogicFacade logic, User user) throws LEGO_CustomException {
+    // help method for checking if a user has any orders
+    private boolean userHasOrder(LogicFacade logic, User user) throws LegoCustomException {
         ArrayList<HouseOrder> orders = logic.getAllOrdersByUser(user.getId());
         boolean hasOrder = false;
         for (HouseOrder houseOrder : orders) {

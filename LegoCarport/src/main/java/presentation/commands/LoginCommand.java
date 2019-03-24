@@ -1,7 +1,7 @@
 package presentation.commands;
 
 import java.util.ArrayList;
-import logic.LEGO_CustomException;
+import logic.LegoCustomException;
 import logic.models.User;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,7 +17,7 @@ import presentation.Command;
 public class LoginCommand extends Command {
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response, LogicFacade logic) throws LEGO_CustomException {
+    public String execute(HttpServletRequest request, HttpServletResponse response, LogicFacade logic) throws LegoCustomException {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         User user = logic.login(email, password);
@@ -25,6 +25,7 @@ public class LoginCommand extends Command {
         session.setAttribute("user", user);
         session.setAttribute("role", user.getRole());
 
+        // Checking roles and returning different lists for each role
         if (User.Role.employee == user.getRole()) {
             ArrayList<HouseOrder> orders = logic.getAllOrders();
             request.setAttribute("allOrders", orders);

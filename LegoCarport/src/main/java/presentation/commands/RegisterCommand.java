@@ -1,7 +1,7 @@
 package presentation.commands;
 
 import java.util.ArrayList;
-import logic.LEGO_CustomException;
+import logic.LegoCustomException;
 import logic.models.User;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,7 +17,7 @@ import presentation.Command;
 public class RegisterCommand extends Command {
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response, LogicFacade logic) throws LEGO_CustomException {
+    public String execute(HttpServletRequest request, HttpServletResponse response, LogicFacade logic) throws LegoCustomException {
         String email = request.getParameter("email");
         String password1 = request.getParameter("password1");
         String password2 = request.getParameter("password2");
@@ -30,7 +30,7 @@ public class RegisterCommand extends Command {
             request.setAttribute("allUserOrders", orders);
             return "Customer";
         } else {
-            throw new LEGO_CustomException("the two passwords did not match");
+            throw new LegoCustomException("the two passwords did not match");
         }
     }
 

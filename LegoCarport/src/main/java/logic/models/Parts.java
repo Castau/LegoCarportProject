@@ -4,6 +4,9 @@ package logic.models;
  *
  * @author Camilla
  */
+
+// Object for the view holding all bricks for a building and info about the 
+// existence of door and window
 public class Parts {
     int ones;
     int twos;

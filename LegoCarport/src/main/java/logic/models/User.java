@@ -4,11 +4,13 @@ package logic.models;
  *
  * @author Camilla
  */
+
+//Object modelling the data that are saved in the database
 public class User {
 
     private int id;
     private String email;
-    private String password; // Should be hashed and secured
+    private String password; 
     private Role role;
 
     public User(String email, String password, Role role) {

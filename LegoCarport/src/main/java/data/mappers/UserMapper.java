@@ -2,7 +2,7 @@ package data.mappers;
 
 import data.Connector;
 import logic.models.User;
-import logic.LEGO_CustomException;
+import logic.LegoCustomException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,6 +12,9 @@ import java.sql.SQLException;
  *
  * @author Camilla
  */
+
+    // The mappers are made as singletons, so that only one instance can exist
+    // at a time, since the state of the objects never change.
 public class UserMapper {
 
     private static UserMapper userMapper;
@@ -27,7 +30,7 @@ public class UserMapper {
         return userMapper;
     }
 
-    public void createUser( User user ) throws LEGO_CustomException {
+    public void createUser( User user ) throws LegoCustomException {
         try {
             Connection con = Connector.connection();
             String SQL = "INSERT INTO lego.users (email, password, role) VALUES (?, ?, ?)";
@@ -38,11 +41,11 @@ public class UserMapper {
             ps.executeUpdate();
 
         } catch ( SQLException | ClassNotFoundException ex ) {
-            throw new LEGO_CustomException( ex.getMessage() );
+            throw new LegoCustomException( ex.getMessage() );
         }
     }
 
-    public User login( String email, String password ) throws LEGO_CustomException {
+    public User login( String email, String password ) throws LegoCustomException {
         try {
             Connection con = Connector.connection();
             String SQL = "SELECT id_user, role FROM lego.users "
@@ -58,10 +61,10 @@ public class UserMapper {
                 user.setId( id );
                 return user;
             } else {
-                throw new LEGO_CustomException( "Could not validate user" );
+                throw new LegoCustomException( "Could not validate user" );
             }
         } catch ( ClassNotFoundException | SQLException ex ) {
-            throw new LEGO_CustomException(ex.getMessage());
+            throw new LegoCustomException(ex.getMessage());
         }
     }
 

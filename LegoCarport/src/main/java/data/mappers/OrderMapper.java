@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import logic.LEGO_CustomException;
+import logic.LegoCustomException;
 import logic.models.HouseOrder;
 
 /**
@@ -15,6 +15,8 @@ import logic.models.HouseOrder;
  */
 public class OrderMapper {
 
+    // The mappers are made as singletons, so that only one instance can exist
+    // at a time, since the state of the objects never change.
     private static OrderMapper orderMapper;
 
     private OrderMapper() {
@@ -28,7 +30,7 @@ public class OrderMapper {
         return orderMapper;
     }
 
-    public void createOrder(HouseOrder order) throws LEGO_CustomException {
+    public void createOrder(HouseOrder order) throws LegoCustomException {
         try {
             Connection con = Connector.connection();
             String SQL = "INSERT INTO lego.orders (orders.id_user, orders.length, orders.width, orders.height, orders.door, orders.window)"
@@ -43,11 +45,11 @@ public class OrderMapper {
             ps.executeUpdate();
 
         } catch (SQLException | ClassNotFoundException ex) {
-            throw new LEGO_CustomException(ex.getMessage());
+            throw new LegoCustomException(ex.getMessage());
         }
     }
 
-    public ArrayList<HouseOrder> getAllOrders() throws LEGO_CustomException {
+    public ArrayList<HouseOrder> getAllOrders() throws LegoCustomException {
         ArrayList<HouseOrder> allOrders = new ArrayList();
         try {
             Connection con = Connector.connection();
@@ -68,12 +70,12 @@ public class OrderMapper {
             }
 
         } catch (SQLException | ClassNotFoundException ex) {
-            throw new LEGO_CustomException(ex.getMessage());
+            throw new LegoCustomException(ex.getMessage());
         }
         return allOrders;
     }
 
-    public ArrayList<HouseOrder> getAllOrdersByUserID(int userID) throws LEGO_CustomException {
+    public ArrayList<HouseOrder> getAllOrdersByUserID(int userID) throws LegoCustomException {
         ArrayList<HouseOrder> allOrders = new ArrayList();
         try {
             Connection con = Connector.connection();
@@ -94,12 +96,12 @@ public class OrderMapper {
                 allOrders.add(order);
             }
         } catch (SQLException | ClassNotFoundException ex) {
-            throw new LEGO_CustomException(ex.getMessage());
+            throw new LegoCustomException(ex.getMessage());
         }
         return allOrders;
     }
 
-    public void empUpdateOrder(HouseOrder order) throws LEGO_CustomException {
+    public void empUpdateOrder(HouseOrder order) throws LegoCustomException {
         try {
             Connection con = Connector.connection();
             String SQL = "UPDATE lego.orders SET order_status = 'SHIPPED' "
@@ -108,11 +110,11 @@ public class OrderMapper {
             ps.executeUpdate();
 
         } catch (SQLException | ClassNotFoundException ex) {
-            throw new LEGO_CustomException(ex.getMessage());
+            throw new LegoCustomException(ex.getMessage());
         }
     }
 
-    public HouseOrder getOrderByOrderID(int orderID) throws LEGO_CustomException {
+    public HouseOrder getOrderByOrderID(int orderID) throws LegoCustomException {
         HouseOrder order = new HouseOrder();
         try {
             Connection con = Connector.connection();
@@ -131,7 +133,7 @@ public class OrderMapper {
                 order.setStatus(rs.getString("order_status"));
             }
         } catch (SQLException | ClassNotFoundException ex) {
-            throw new LEGO_CustomException(ex.getMessage());
+            throw new LegoCustomException(ex.getMessage());
         }
         return order;
     }

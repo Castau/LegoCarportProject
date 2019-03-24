@@ -6,7 +6,7 @@ import presentation.commands.DesignHouseCommand;
 import presentation.commands.LoginCommand;
 import presentation.commands.RegisterCommand;
 import presentation.commands.CreateHouseCommand;
-import logic.LEGO_CustomException;
+import logic.LegoCustomException;
 import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -44,6 +44,6 @@ public abstract class Command {
     }
 
     public abstract String execute( HttpServletRequest request, HttpServletResponse response, LogicFacade logic) 
-            throws LEGO_CustomException;
+            throws LegoCustomException;
 
 }

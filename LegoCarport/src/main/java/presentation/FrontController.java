@@ -1,6 +1,6 @@
 package presentation;
 
-import logic.LEGO_CustomException;
+import logic.LegoCustomException;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,6 +18,7 @@ import logic.LogicFacade_Impl;
 @WebServlet(name = "FrontController", urlPatterns = {"/Home"})
 public class FrontController extends HttpServlet {
 
+    // only instance of LogicFacade is created here and sent to all the commands
     private final LogicFacade logic = new LogicFacade_Impl();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -29,17 +30,18 @@ public class FrontController extends HttpServlet {
             String view = command.execute(request, response, logic);
             request.getRequestDispatcher("/jsp/" + view + ".jsp").forward(request, response);
 
-        } catch (LEGO_CustomException ex) {
+        } catch (LegoCustomException ex) {
             request.setAttribute("error", ex.getMessage());
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
     }
 
-    private void validateSession(HttpServletRequest request) throws LEGO_CustomException {
+    // private method to validate the Session
+    private void validateSession(HttpServletRequest request) throws LegoCustomException {
         HttpSession session = request.getSession();
         if (!(request.getParameter("command").equals("login") || request.getParameter("command").equals("register"))) {
             if (session == null || session.getAttribute("user") == null) {
-                throw new LEGO_CustomException("Session Invalid");
+                throw new LegoCustomException("Session Invalid");
             }
         }
     }

@@ -4,6 +4,8 @@ package logic.models;
  *
  * @author Camilla
  */
+
+//Object modelling the data that are saved in the database
 public class HouseOrder {
     private int length;
     private int width;

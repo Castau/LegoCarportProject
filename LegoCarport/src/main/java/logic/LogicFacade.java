@@ -9,20 +9,22 @@ import logic.models.User;
  *
  * @author Camilla
  */
+
+// interface presenting methods in the LogicFaade to the presentaion
 public interface LogicFacade {
 
-    public User login(String email, String password) throws LEGO_CustomException;
+    public User login(String email, String password) throws LegoCustomException;
 
-    public User createUser(String email, String password) throws LEGO_CustomException;
+    public User createUser(String email, String password) throws LegoCustomException;
     
-    public void saveHouse (HouseOrder order) throws LEGO_CustomException;
+    public void saveHouse (HouseOrder order) throws LegoCustomException;
 
-    public ArrayList<HouseOrder> getAllOrders() throws LEGO_CustomException;
+    public ArrayList<HouseOrder> getAllOrders() throws LegoCustomException;
     
-    public ArrayList<HouseOrder> getAllOrdersByUser(int userID) throws LEGO_CustomException;
+    public ArrayList<HouseOrder> getAllOrdersByUser(int userID) throws LegoCustomException;
 
-    public void updateOrder(HouseOrder order) throws LEGO_CustomException;
+    public void updateOrder(HouseOrder order) throws LegoCustomException;
 
-    public Parts getPartsList(int parseInt)throws LEGO_CustomException;
+    public Parts getPartsList(int parseInt)throws LegoCustomException;
     
 }
