@@ -19,7 +19,7 @@ This was an individual project.
 
 
 #### Project description
-[Direct link](https://datsoftlyngby.github.io/dat2sem2019Spring/Modul3/LegoHus.html) to CPHBusiness githuppages.  
+[Direct link](https://datsoftlyngby.github.io/dat2sem2019Spring/Modul3/LegoHus.html) to CPHBusiness githubpages.  
 This application uses the [sample login](https://github.com/DAT2SemKode/Modul3LogInSample) made by the teacher Kasper Oesterbye, with some modifications.
 
 
