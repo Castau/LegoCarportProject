@@ -4,6 +4,7 @@ LegoCarportProject
 ======
 Made in the 2. semester of Computer Science AP at CPHBusiness, Kgs. Lyngby, Denmark. 
 This was an individual project.
+* Author: Camilla Jenny Valerius Staunstrup
 
 
 ### Installation
