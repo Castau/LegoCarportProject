@@ -41,6 +41,36 @@ public class Parts {
     public boolean isWindow() {
         return window;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Parts other = (Parts) obj;
+        if (this.ones != other.ones) {
+            return false;
+        }
+        if (this.twos != other.twos) {
+            return false;
+        }
+        if (this.fours != other.fours) {
+            return false;
+        }
+        if (this.door != other.door) {
+            return false;
+        }
+        if (this.window != other.window) {
+            return false;
+        }
+        return true;
+    }
     
     
     
