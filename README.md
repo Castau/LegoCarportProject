@@ -39,20 +39,20 @@ Calculation visualization for an order with the following dimensions:
 
 Login & Register - The application index page
 
-<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/Index.PNG" alt = "calculation visual" height="600" width="800"/> 
+<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/Index.PNG" alt = "calculation visual" height="500" width="750"/> 
 
 Customer view - with own orders overview
 
-<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/CustomerHomePage.PNG" alt = "calculation visual" height="600" width="800"/> 
+<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/CustomerHomePage.PNG" alt = "calculation visual" height="500" width="750"/> 
 
 Employee view - with all orders overview
 
-<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/EmployeeHomePage.PNG" alt = "calculation visual" height="600" width="800"/> 
+<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/EmployeeHomePage.PNG" alt = "calculation visual" height="500" width="750"/> 
 
 Designer - Form to place Lego house orders
 
-<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/HouseDesigner.PNG" alt = "calculation visual" height="600" width="800"/> 
+<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/HouseDesigner.PNG" alt = "calculation visual" height="500" width="750"/> 
 
 Partslist - Specific orders partslist
 
-<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/PartsList.PNG" alt = "calculation visual" height="600" width="800"/> 
+<img src="https://raw.githubusercontent.com/Castau/LegoCarportProject/master/Docs/PartsList.PNG" alt = "calculation visual" height="500" width="750"/> 
